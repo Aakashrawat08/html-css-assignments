@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+.main{
+    position: relative;
+    height: 100vh;
+    width: 100vh;
+    
+}
+.balloon{
+    height: 200px;
+    width: 200px;
+    margin-left: 30px;
+position: absolute;
+background: url(./image/5462.png);
+background-size: contain;
+bottom: 0;
+
+  
+}
+.main:hover .balloon {
+    
+    transition-duration: 3s;
+    /* bottom: 500px; */
+  }
+
+  .main .balloon.default {
+    left: 39px;
+    background-image: url(./image/5462.png);
+  }
+  .main .balloon.linear {
+    left: 200px;
+    transition-timing-function: linear;
+  }
+  .main .balloon.ease-in {
+    left: 359px;
+    transition-timing-function: ease-in;
+  }
+  .main .balloon.ease-out {
+    left: 520px;
+    transition-timing-function: ease-out;
+  }
+  .main .balloon.ease-in-out {
+    left: 680px;
+    transition-timing-function: ease-in-out;
+  }
+  .main .balloon.cubic-bezier {
+    left: 840px;
+    transition-timing-function: cubic-bezier(0,1,1,0);
+  }
+
+</style>
+
+<div class="main">
+   <div class="balloon default "></div>
+   <div class="balloon linear"></div>
+   <div class="balloon ease-in"></div>
+   <div class="balloon ease-out"></div>
+   <div class="balloon ease-in-out"></div>
+   <div class="balloon cubic-bezier"></div>
+</div>
